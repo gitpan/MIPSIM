@@ -1,0 +1,12 @@
+CUP:
+LDI R3,#5
+LDI R2,#5
+
+BAR:
+LDI R1,#5
+ADD R5,R2,R1
+
+FOO:
+ADD R4,R2,#10
+ADD R4,#300
+

@@ -1,0 +1,33 @@
+#!/usr/bin/perl -l
+
+use strict;
+use IO::All;
+
+my @machine = <bin/mipsim-*>;
+my @progs = <test/prog*>;
+
+if ($ARGV[0]) {
+    @machine = @ARGV[0];
+}
+
+my $ok = 0;
+my $nok = 0;
+for my $m (@machine) {
+    for my $p (@progs) {
+        my $outf = $p; $outf =~ s{^test}{test/output};
+	unless (-f $outf) {
+	    print "Warning: $outf doesn't exist, skip it.";
+	    next;
+	}
+        my $diff = `$m -file $p | diff - $outf`;
+        if($diff) {
+            print "$m test on $p failed.";
+	    $nok++;
+        } else {
+            print "$m test on $p successed!!";
+	    $ok++;
+	}
+    }
+}
+
+print "Successed: $ok , Failed: $nok. Success Ratio: " . $ok/($ok+$nok);

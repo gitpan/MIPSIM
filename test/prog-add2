@@ -1,0 +1,7 @@
+LD R1,#1
+LD R2,#1
+LD R3,#1
+LD R4,#1
+LD R5,#1
+ADD R6,R1,R1
+

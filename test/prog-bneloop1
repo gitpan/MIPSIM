@@ -1,0 +1,9 @@
+         LD R1,#10
+         LD R3,#5
+         SD R3, 5(R0)
+         LD R4,5(R0)
+Tree: ADD R2, #1
+         BEQ R2, R4, Goal
+         BNE R1, R2,Tree
+Goal: LD R3,#3
+

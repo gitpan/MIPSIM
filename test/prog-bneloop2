@@ -1,0 +1,16 @@
+	LD R1,#10
+Tree:
+	ADD R2, #1
+	LD  R10, #1
+	LD  R11, #1
+	LD  R12, #1
+	LD  R13, #1
+	LD  R14, #1
+	BNE R1, R2,Tree
+	LD R3,#3
+	LD  R10, #1
+	LD  R11, #1
+	LD  R12, #1
+	LD  R13, #1
+	LD  R14, #1
+

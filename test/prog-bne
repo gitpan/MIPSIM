@@ -1,0 +1,5 @@
+LD R1,#10
+BNE R1,#1,Tree
+LD R2,#10
+Tree: LD R1,#5
+

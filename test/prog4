@@ -1,0 +1,4 @@
+LDI R1,#5
+LDI R2,#5
+DIV R3, R1, R2
+
